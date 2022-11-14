@@ -6,8 +6,8 @@
                 <div>KRAKEN.FM</div>
             </div>
             <input id="input-email" placeholder="E-mail" />
-            <input id="input-password" placeholder="Password" />
-            <button id="btn-submit">LOGIN</button>
+            <input id="input-password" type="password" placeholder="Password" />
+            <button id="btn-submit" type="submit">LOGIN</button>
         </form>
     </div>
 </template>

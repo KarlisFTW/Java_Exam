@@ -7,9 +7,26 @@
         <div class="wrapper-profile">
             <div class="section-user">
                 <span class="avatar"></span>
-                <h3 id="txt-full-name">NAME SURNAME</h3>
+                <h3 id="txt-full-name">{{name}} {{surname}}</h3>
             </div>
-            <button id="btn-logout">LOGOUT</button>
+            <button onclick="logout()" id="btn-logout">LOGOUT</button>
         </div>
     </div>
 </template>
+<script>
+    export default {
+        name: "main-header",
+        data() {
+            return {
+                name,
+                surname
+            }
+        }
+
+    }
+    import Auth from "@/views/Auth.js"
+    var name = Auth.name, surname = Auth.surname;
+    function logout() {
+        Auth.logout();
+    }
+</script>

@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import Auth from '@/views/Auth.js'
 
 // Importējam vēlamos skatus kurus gribam izmantot
 import Login from '@/views/Login.vue'
@@ -23,7 +24,11 @@ const router = createRouter({
 // arguments to glabā adresi uz kurieni gribam iet
 // arguments from glabā adresi no kurienes mēs nākam
 router.beforeEach((to, from) => {
-
+    if (Auth.is_authenticated == false&& !(to=="/login")) {
+        return "/login"
+    } else if (Auth.is_authenticated == true && to == "/login") {
+        return from ? from.path: "/login"
+    }
 })
 
 export default router
