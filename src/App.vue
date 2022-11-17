@@ -1,22 +1,30 @@
 <template>
-    <Header></Header>
-    <div id="section-body">
-        <nav id="nav-main" class="wrapper-navigation">
-            <ol>
-                <li>
-                    <a href="/">SONGS</a>
-                </li>
-                <li>
-                    <a href="/albums">ALBUMS</a>
-                </li>
-                <li>
-                    <a href="/about">ABOUT</a>
-                </li>
-            </ol>
-        </nav>
-        <router-view class="section-router"></router-view>
+    <div v-if="display">
+        <HeaderComponent ></HeaderComponent>
+
+        <div id="section-body">
+            <NavigationComponent></NavigationComponent>
+            <router-view class="section-router"></router-view>
+        </div>
+        <div id="section-player">
+            <AudioPlayer />
+        </div>
     </div>
-    <div id="section-player">
-        <AudioPlayer />
+    <div v-else>
+        <Login>
+
+        </Login>
     </div>
 </template>
+<script>
+
+    export default {
+        data() {
+            return {
+                display:localStorage.is_authenticated,
+            }
+        }
+
+    }
+
+</script>

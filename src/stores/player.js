@@ -9,6 +9,7 @@ export const player = reactive({
     },
     setNowPlaying(song) {
         return this.now_playing = song;
+    
     },
     getNowPlayingSongId() {
         return this.now_playing?.id;
@@ -18,6 +19,9 @@ export const player = reactive({
     },
     getNowPlayingAlbumID() {
         return this.now_playing?.album?.id ?? null;
+    },
+    getNowPlayingSongDuration() {
+        return this.now_playing?.duration;
     },
     getNowPlayingSongName() {
         return this.now_playing?.name ?? '';

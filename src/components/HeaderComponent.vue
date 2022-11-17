@@ -7,7 +7,7 @@
         <div class="wrapper-profile">
             <div class="section-user">
                 <span class="avatar"></span>
-                <h3 id="txt-full-name">{{name}} {{surname}}</h3>
+                <h3 id="txt-full-name">Yes</h3>
             </div>
             <button onclick="logout()" id="btn-logout">LOGOUT</button>
         </div>
@@ -24,8 +24,8 @@
         }
 
     }
-    import Auth from "@/views/Auth.js"
-    var name = Auth.name, surname = Auth.surname;
+    import {auth} from "../Views/Auth.js"
+    var name = auth.name, surname = auth.surname;
     function logout() {
         Auth.logout();
     }

@@ -1,14 +1,14 @@
 import { reactive } from 'vue'
 
 // TE DEFINÇT USER OBJEKTU
-user = {
-    name:"Kârlis",
-    surname:"Griìis",
-    code:"IT19020",
-    favorite_songs:localStorage.favorite_songs
-}
+ 
 export const auth = reactive({
-
+ user = {
+    name: "Kârlis",
+    surname: "Griìis",
+    code: "IT19020",
+    favorite_songs: localStorage.favorite_songs ?? null
+},
     is_authenticated: localStorage.is_authenticated ?? false,
 
     setUserData(name, surname, code) {
@@ -39,11 +39,11 @@ export const auth = reactive({
             user.favorite_songs.push(songID);
         }
         localStorage.favorite_songs = user.favorite_songs;
-},
+    },
 
     getFavoriteSongs() {
         return user.favorite_songs;
-}
+    }
 
 
 })
